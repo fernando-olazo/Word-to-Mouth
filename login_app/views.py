@@ -61,19 +61,13 @@ def edit(request, recipe_id):
     }
     return render(request, "edit.html", context)
 
-def update(request, user_id):
+def update(request, recipe_id):
     if request.method == "POST":
-        # errors = User.objects.registration_validator(request.POST)
-        # if len(errors) != 0:
-        #     for value in errors.values():
-        #         messages.error(request, value)
-        #     return redirect('/')
-        
-        update_user = User.objects.get(id = user_id)
-        update_user.first_name = request.POST['first_name'],
-        update_user.last_name = request.POST['last_name'],
-        update_user.email = request.POST['email'],
-        update_user.save()
+        update_recipe = Recipe.objects.get(id = recipe_id)
+        update_recipe.r_title = request.POST['r_title']
+        update_recipe.ingredients = request.POST['ingredients']
+        update_recipe.preparation = request.POST['preparation']
+        update_recipe.save()
         
         return redirect('/recipes')
     

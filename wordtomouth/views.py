@@ -38,11 +38,3 @@ def delete_recipe(request, recipe_id):
     #delete
     this_recipe.delete()
     return redirect('/recipes')
-
-def like(request):
-    if request.method != 'POST':
-        return redirect('/')
-    this_recipe = Recipe.objects.get(id=request.session['user_id'])[0]
-    this_user= User.objects.filter(id=request.session['user_id'])[0]
-    this_recipe.like.add(this_user)
-    return redirect('/')

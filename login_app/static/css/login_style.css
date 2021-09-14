@@ -1,7 +1,10 @@
-h1{
-    color:black;
+.container{
     background-color: rgb(40, 44, 52);
-    font-style: italic;
+    color:white;
+}
+
+h1{
+    background-color: rgb(95, 123, 160);
 }
 
 div{
