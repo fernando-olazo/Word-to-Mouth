@@ -34,7 +34,7 @@ def delete_recipe(request, recipe_id):
     if request.method != 'POST' or 'user_id' not in request.session:
         return redirect('/')
     #specify the message
-    this_recipe= Quote.objects.get(id=recipe_id)
+    this_recipe= Recipe.objects.get(id=recipe_id)
     #delete
     this_recipe.delete()
     return redirect('/recipes')

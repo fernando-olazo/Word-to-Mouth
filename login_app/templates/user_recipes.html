@@ -13,15 +13,16 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-5">
+            <div>
                 <h1>{{user.first_name}} {{user.last_name}}'s Recipes</h1>
                 {% for recipe in all_recipes %}
                 <p>{{ recipe.r_title }}</p>
                 <p>{{ recipe.ingredients }}</p>
                 <p>{{ recipe.preparation }}</p>
+                <a href="/myaccount/{{recipe.id}}">Edit My Recipe</a>
                 {% endfor %}
             </div>
-            <div class="col-2 offset-5">
+            <div>
                 <a href="/recipes">Back</a> | <a href="logout">Logout</a>
             </div>
         </div>

@@ -36,7 +36,8 @@
                 </div>
                 <div class="col-6">
                     <div class="offset-5">
-                        <a href="/myaccount/{{this_user.id}}">Edit My Recipe</a> | <a href="logout">Logout</a><br><br>
+                        <a href="logout">Logout</a><br><br>
+                        <h4>Post a Recipe</h4>
                         <form action="/recipe/create" method="POST">
                             {% csrf_token %}
                             <label>
